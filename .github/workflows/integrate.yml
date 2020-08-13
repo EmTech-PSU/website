@@ -7,33 +7,32 @@ on:
     branches: [ master ]
 
 jobs:
-  if: github.ref == 'refs/heads/master'
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [12.x]
-  steps:
-    - name: checkout code
-      uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node_version }}
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node_version }}
 
-    - name: Installing NPM packages
-      run: npm install
+      - name: Installing NPM packages
+        run: npm install
 
-    - name: Run Linting Check w/(eslint)
-      run: npm run eslint
-      continue-on-error: true
+      - name: Run Linting Check w/(eslint)
+        run: npm run eslint
+        continue-on-error: true
 
-    - name: Webpack Build to dist/
-      run: npm run build
-      
-    - name: Deploy to Github Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        publish_dir: ./dist
-  
+      - name: Webpack Build to dist/
+        run: npm run build
+        
+      - name: Deploy to Github Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_dir: ./dist
+    
