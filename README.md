@@ -37,7 +37,7 @@ npx eslint ./src/Components/Labs/Lab.js
 
 ## Todo List
 
-- [ ] Initial Configuration
+- [x] Initial Configuration
     - [x] Webpack Configuration
     - [x] Package JSON Config
     - [x] Babel Config

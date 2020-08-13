@@ -7,8 +7,12 @@ on:
     branches: [ develop ]
 
 jobs:
-  checkout:
+  if: github.ref == 'refs/heads/develop'
+  build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
     steps:
       - name: checkout code
         uses: actions/checkout@v2
