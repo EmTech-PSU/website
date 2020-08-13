@@ -1,0 +1,36 @@
+name: Development Checks
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  checkout:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v2
+    
+  lint:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node_version: [12.x]
+    
+    steps:
+      - name: Use Node ${{matrix.node_version}}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{matrix.node_version}}
+      
+      - name: Install NPM Dependencies
+        run: npm install
+
+      - name: Run Linting Check w/(eslint )
+        run: npm run eslint
+        continue-on-error: true
+
+      - name: Webpack build to dist/
+        run: npm run build
