@@ -17,6 +17,17 @@ start dev server
 ```bash
 npm start
 ```
+#
+
+## Building
+### Production
+```bash
+npm build
+```
+### Development
+```bash
+npm build:dev
+```
 
 #
 
@@ -48,11 +59,16 @@ npx eslint ./src/Components/Labs/Lab.js
     - [ ] Animation
     - [ ] Learn More
 - [ ] Navigation
-    - [ ] NavBar
-    - [ ] Logo
+    - [x] NavBar
+    - [x] Logo
+        - [ ] Refine Logo
     - [ ] Links
-    - [ ] React Router Routing
-    - [ ] Mobile Responsiveness
+    - [x] React Router Routing
+    - [x] Mobile Responsiveness
+    - [ ] Make Look Better
+        - [ ] Transparent?
+        - [ ] Solid on scroll ?
+    - [ ] Fonts / Sizing
 - [ ] About
     - [ ] Club Mission Statement
     - [ ] Description
@@ -76,4 +92,14 @@ npx eslint ./src/Components/Labs/Lab.js
         - [ ] Docker / Kubernetes
         - [ ] CI / CD 
         - [ ] Github
-        
+- [ ] React Routing
+    - [x] Routes for all pages
+    - [ ] Hash Links for in-page hrefs
+    - [ ] 404 Page Routing
+        - [ ] Auto redirect to personalized 404 page
+    
+
+## Contributors
+[Collin Kleest](mailto:collinkleest@gmail.com)
+
+[License](./LICENSE)
