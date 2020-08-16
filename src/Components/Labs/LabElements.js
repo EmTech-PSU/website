@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export const LabHeading = () => {
     return (
         <div className="jumbotron">
-            <h4 className="display-4">EmTech's Labs</h4>
+            <h4 className="display-4">EmTech&apos;s Labs</h4>
             <p classNamer="lead">
                 EmTech explores a vairety of Labs that target technologies used in the field today
             </p>
