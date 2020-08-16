@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavBrand, NavToggle, NavElement, NavLink } from './NavElements';
+import { NavBrand, NavElement, NavLink } from './NavElements';
 import EmTechLogo from '../../Assets/logos/emtechfinalv4.png';
 
 const Navigation = () => {
